@@ -15,6 +15,8 @@ public class HomeActivity extends ActivityBase {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState,R.layout.activity_home);
 
+        getSupportActionBar().hide();
+
     }
 
 

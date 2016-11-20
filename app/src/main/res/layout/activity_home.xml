@@ -9,18 +9,21 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorAccent"
     tools:context="app.srusso.usrealsanfelice.HomeActivity">
 
 
     <ImageView
+        android:padding="40dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/homelogo"
+        android:src="@drawable/logohome"
         android:id="@+id/imageView"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:scaleType="center"
-        android:background="@drawable/gradienthome" />
+        android:scaleType="fitCenter"
+        android:background="@color/colorPrimary"
+        />
 
 
     <LinearLayout
@@ -30,22 +33,26 @@
         android:layout_alignParentStart="true"
         android:orientation="horizontal">
 
-        <ImageButton
+        <Button
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorAccent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.5"
+            android:text="La Rosa"
+            android:textColor="#fff"
             android:onClick="goRosaActivity"
             android:layout_marginRight="20dp"
-            android:contentDescription="sad" />
 
-        <ImageButton
+            android:backgroundTint="@android:color/transparent" />
+
+        <Button
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:background="@color/colorPrimaryDark"
+            android:text="Convocati"
+            android:textColor="#fff"
             android:layout_weight="0.5"
-            android:contentDescription="sad" />
+
+            android:backgroundTint="@android:color/transparent" />
 
 
     </LinearLayout>

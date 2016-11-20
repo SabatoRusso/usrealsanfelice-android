@@ -54,6 +54,7 @@ public class GiocatoreAdapter extends BaseAdapter {
         ImageView avatarGiocatore = (ImageView) convertView.findViewById(R.id.avatarGiocatore);
         TextView nomeGiocatore = (TextView) convertView.findViewById(R.id.nomeGiocatore);
         TextView numeroMaglia = (TextView) convertView.findViewById(R.id.numeroMaglia);
+        TextView ruoloGiocatore = (TextView) convertView.findViewById(R.id.ruoloGiocatore);
 
 
        // String  url_immagini = actPr.prodotti.get(position).getImmagini().get(0);
@@ -61,6 +62,7 @@ public class GiocatoreAdapter extends BaseAdapter {
         Picasso.with(mContext).load(giocatore.getUrlAvatar()).into(avatarGiocatore);
         nomeGiocatore.setText(giocatore.getCognome() + " " + giocatore.getNome());
         numeroMaglia.setText(giocatore.getNumeroMaglia() +"" );
+        ruoloGiocatore.setText(giocatore.getRuolo());
 
         return convertView;
     }

@@ -14,8 +14,9 @@
 
 
     <LinearLayout
-        android:layout_margin="10dp"
+
         android:orientation="vertical"
+        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -25,8 +26,7 @@
             android:layout_centerHorizontal="true"
             android:id="@+id/listaRosa"
             android:divider="@null"
-
-            android:dividerHeight="0dp"/>
+            android:dividerHeight="1dp"/>
 
     </LinearLayout>
 
