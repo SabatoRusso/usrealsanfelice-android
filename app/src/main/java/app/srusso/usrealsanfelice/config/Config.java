@@ -1,7 +1,7 @@
 package app.srusso.usrealsanfelice.config;
 
 /**
- * Created by italdata on 18/11/16.
+ * Created by Sabato Russo on 18/11/16.
  */
 
 public class Config {

@@ -9,7 +9,7 @@ import com.loopj.android.http.AsyncHttpClient;
 import app.srusso.usrealsanfelice.R;
 
 /**
- * Created by italdata on 17/11/16.
+ * Created by Sabato Russo on 17/11/16.
  */
 
 public class ActivityBase extends AppCompatActivity {

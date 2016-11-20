@@ -16,7 +16,7 @@ import app.srusso.usrealsanfelice.RosaActivity;
 import app.srusso.usrealsanfelice.to.Giocatore;
 
 /**
- * Created by italdata on 18/11/16.
+ * Created by Sabato Russo on 18/11/16.
  */
 
 public class GiocatoreAdapter extends BaseAdapter {
