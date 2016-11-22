@@ -13,7 +13,43 @@ public class Giocatore {
     private int numeroMaglia;
     private String ruolo;
     private String urlAvatar;
+    private int peso;
+    private double altezza;
+    private String nascita;
+    private String comune;
 
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+    public double getAltezza() {
+        return altezza;
+    }
+
+    public void setAltezza(double altezza) {
+        this.altezza = altezza;
+    }
+
+    public String getNascita() {
+        return nascita;
+    }
+
+    public void setNascita(String nascita) {
+        this.nascita = nascita;
+    }
+
+    public String getComune() {
+        return comune;
+    }
+
+    public void setComune(String comune) {
+        this.comune = comune;
+    }
 
     public String getUrlAvatar() {
         return urlAvatar;

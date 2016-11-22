@@ -117,6 +117,10 @@ public class RosaActivity extends ActivityBase{
                         String avatarPath = giocatoreJson.getString("path_img");
                         int numeroMaglia = giocatoreJson.getInt("num_maglia");
                         String ruolo   = giocatoreJson.getString("ruolo");
+                        String nascita   = giocatoreJson.getString("dat_nas");
+                        String comune   = giocatoreJson.getString("com_nasc");
+                        int peso        = giocatoreJson.getInt("peso");
+                        double altezza  = giocatoreJson.getDouble("altezza");
 
 
                                 Giocatore giocatore = new Giocatore();
@@ -125,6 +129,10 @@ public class RosaActivity extends ActivityBase{
                                 giocatore.setUrlAvatar(avatarPath);
                                 giocatore.setNumeroMaglia(numeroMaglia);
                                 giocatore.setRuolo(ruolo);
+                                giocatore.setAltezza(altezza);
+                                giocatore.setComune(comune);
+                                giocatore.setPeso(peso);
+                                giocatore.setNascita(nascita);
 
 
 

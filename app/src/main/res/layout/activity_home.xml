@@ -17,7 +17,7 @@
         android:padding="40dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/logohome"
+        android:src="@drawable/scudetto"
         android:id="@+id/imageView"
         android:scaleType="fitCenter"
         android:background="@color/colorPrimary"
