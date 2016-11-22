@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay"
-        android:layout_height="280dp">
+        android:layout_height="200dp">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
@@ -30,7 +30,7 @@
 
                 app:layout_collapseMode="pin"
                 android:fitsSystemWindows="true"
-                android:scaleType="fitCenter" />
+                android:scaleType="centerCrop" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"

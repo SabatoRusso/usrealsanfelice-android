@@ -1,5 +1,6 @@
 package app.srusso.usrealsanfelice;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -65,6 +67,21 @@ public class RosaActivity extends ActivityBase{
 
         listViewRosa.setNestedScrollingEnabled(true);
         caricaRosa();
+
+
+        listViewRosa.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+
+                String json_giocatore  = gson.toJson(listaGiocatori.get(position));
+
+                Intent page_dettaglio= new Intent(context, DettaglioGiocatoreActivity.class);
+                page_dettaglio.putExtra("GIOCATORE",json_giocatore);
+                startActivity(page_dettaglio);
+
+            }
+        });
     }
 
 

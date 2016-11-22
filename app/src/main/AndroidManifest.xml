@@ -26,7 +26,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="app.srusso.usrealsanfelice.HomeActivity" />
         </activity>
-        <activity android:name=".DettaglioGiocatoreActivity"></activity>
+        <activity android:name=".DettaglioGiocatoreActivity"
+            android:parentActivityName=".RosaActivity"
+            >
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="app.srusso.usrealsanfelice.RosaActivity" />
+        </activity>
     </application>
 
 </manifest>
