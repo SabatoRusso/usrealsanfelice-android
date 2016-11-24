@@ -29,4 +29,13 @@ public class HomeActivity extends ActivityBase {
         startActivity(i);
 
     }
+
+
+    public void goConvocatiActivity(View v){
+
+        Intent i = new Intent(context, ConvocatiActivity.class);
+
+        startActivity(i);
+
+    }
 }
