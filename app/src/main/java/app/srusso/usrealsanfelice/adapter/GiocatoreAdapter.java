@@ -11,8 +11,11 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.List;
+
 import app.srusso.usrealsanfelice.R;
 import app.srusso.usrealsanfelice.RosaActivity;
+import app.srusso.usrealsanfelice.base.ActivityBase;
 import app.srusso.usrealsanfelice.to.Giocatore;
 
 /**
@@ -23,16 +26,20 @@ public class GiocatoreAdapter extends BaseAdapter {
 
     private Context mContext;
     private int width;
-    private RosaActivity actRs;
+    private ActivityBase actRs;
+    private List<Giocatore> listaGiocatori;
 
-    public GiocatoreAdapter(Context c, RosaActivity act) {
+
+    public GiocatoreAdapter(Context c, ActivityBase act,List<Giocatore>  lista) {
         mContext = c;
         actRs = act;
+        listaGiocatori = lista;
+
     }
 
     public int getCount() {
 
-        return actRs.listaGiocatori.size();
+        return this.listaGiocatori.size();
 
     }
 
@@ -48,7 +55,7 @@ public class GiocatoreAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
 
-        LayoutInflater inflater = ((RosaActivity) mContext).getLayoutInflater();
+        LayoutInflater inflater = ((ActivityBase) mContext).getLayoutInflater();
         convertView = inflater.inflate(R.layout.row_giocatore, parent, false);
 
         ImageView avatarGiocatore = (ImageView) convertView.findViewById(R.id.avatarGiocatore);
@@ -58,7 +65,7 @@ public class GiocatoreAdapter extends BaseAdapter {
 
 
        // String  url_immagini = actPr.prodotti.get(position).getImmagini().get(0);
-        Giocatore giocatore = actRs.listaGiocatori.get(position);
+        Giocatore giocatore = this.listaGiocatori.get(position);
         Picasso.with(mContext).load(giocatore.getUrlAvatar()).into(avatarGiocatore);
         nomeGiocatore.setText(giocatore.getCognome() + " " + giocatore.getNome());
         numeroMaglia.setText(giocatore.getNumeroMaglia() +"" );

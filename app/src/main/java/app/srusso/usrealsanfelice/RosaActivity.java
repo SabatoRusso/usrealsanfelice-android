@@ -86,7 +86,7 @@ public class RosaActivity extends ActivityBase{
 
 
     public  void load(){
-        adapterG  = new GiocatoreAdapter(context,this);
+        adapterG  = new GiocatoreAdapter(context,this,listaGiocatori);
         listViewRosa.setAdapter(adapterG);
     }
 

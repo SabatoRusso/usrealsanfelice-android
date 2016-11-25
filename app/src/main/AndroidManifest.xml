@@ -11,8 +11,12 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:configChanges="orientation"
+
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity">
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,6 +24,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="portrait"
             android:name=".RosaActivity"
             android:label="@string/title_activity_rosa"
             android:parentActivityName=".HomeActivity"
@@ -29,6 +34,7 @@
                 android:value="app.srusso.usrealsanfelice.HomeActivity" />
         </activity>
         <activity
+            android:screenOrientation="portrait"
             android:name=".DettaglioGiocatoreActivity"
             android:parentActivityName=".RosaActivity">
             <meta-data
@@ -38,6 +44,7 @@
         <activity android:name=".ConvocatiActivity"
             android:parentActivityName=".HomeActivity"
             android:label="@string/title_activity_convocati"
+            android:screenOrientation="portrait"
             >
 
 
