@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="app.srusso.usrealsanfelice.DettaglioGiocatoreActivity">
+    <item
+        android:id="@+id/share"
+        android:orderInCategory="100"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="Condividi"
+        app:showAsAction="ifRoom" />
+</menu>

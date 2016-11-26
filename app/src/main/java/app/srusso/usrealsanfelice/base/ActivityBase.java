@@ -3,6 +3,7 @@ package app.srusso.usrealsanfelice.base;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
@@ -26,6 +27,13 @@ public class ActivityBase extends AppCompatActivity {
         clientHttpClient = new AsyncHttpClient();
         clientHttpClient.setTimeout(60000);
 
+    }
+
+
+
+    public void showToast(String msg) {
+        Toast t = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
+        t.show();
     }
 
 }

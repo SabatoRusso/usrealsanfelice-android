@@ -3,4 +3,6 @@
     <string name="title_activity_rosa">La Rosa</string>
     <string name="title_activity_convocati">Convocati</string>
     <string name="action_settings">Settings</string>
+    <string name="erroreShare">Errore condivisione immagine</string>
+
 </resources>
