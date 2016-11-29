@@ -109,11 +109,12 @@
                 android:onClick="goGalleryActivity"
                 android:layout_gravity="right"
                 android:backgroundTint="@color/colorPrimary"
-                android:src="@android:drawable/ic_menu_gallery"
+                android:src="@drawable/ic_photo_camera_white_48dp"
                 android:elevation="0dp"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter" />
 
         </LinearLayout>
 
