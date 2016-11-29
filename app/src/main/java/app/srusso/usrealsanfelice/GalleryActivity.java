@@ -23,12 +23,6 @@ import app.srusso.usrealsanfelice.base.PicassoImageLoader;
 import app.srusso.usrealsanfelice.to.Partita;
 
 public class GalleryActivity extends ActivityBase {
-    private static final ArrayList<String> images = new ArrayList<>(Arrays.asList(
-            "http://www.usrealsanfelice.it//immagini//girone2016-2017//giornata6//IMG_20151122_111238_615.jpg",
-            "http://www.usrealsanfelice.it//immagini//girone2016-2017//giornata6//IMG_20151122_111238_615.jpg",
-            "http://www.usrealsanfelice.it//immagini//girone2016-2017//giornata6//IMG_20151122_111238_615.jpg"
-    ));
-    private static final String movieUrl = "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4";
 
     private ScrollGalleryView scrollGalleryView;
      private Partita partita;
