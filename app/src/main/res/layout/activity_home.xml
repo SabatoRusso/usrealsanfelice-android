@@ -34,7 +34,11 @@
         android:layout_alignParentStart="true">
 
         <LinearLayout
+            android:id="@+id/layout_utima_partita"
             android:layout_width="match_parent"
+            android:animateLayoutChanges="true"
+            android:visibility="visible"
+            android:onClick="goGalleryActivity"
             android:layout_height="wrap_content"
             android:background="@drawable/corner_ultima_partita"
             android:layout_alignParentTop="true"
@@ -42,13 +46,14 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/data_giornata"
                 android:layout_width="match_parent"
                 android:gravity="center"
-                android:text="11/12/2017"
+                android:text="11/12/2017 Giornata 6"
                 android:background="@android:color/transparent"
                 android:textColor="@color/colorPrimaryDark"
                 android:layout_height="wrap_content" />
-        
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,7 +61,6 @@
             android:layout_alignParentTop="true"
             android:padding="10dp"
             android:gravity="center"
-            android:onClick="goConvocatiActivity"
             android:layout_alignParentStart="true"
             android:orientation="horizontal">
 
@@ -74,7 +78,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-
+                android:id="@+id/risultato"
                 android:layout_width="match_parent"
                 android:textColor="@android:color/white"
                 android:textSize="14dp"
@@ -87,6 +91,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+
                 android:id="@+id/squadraFuoriCasa"
                 android:layout_width="match_parent"
                 android:textColor="@color/colorPrimaryDark"
@@ -99,6 +104,16 @@
                 android:layout_height="wrap_content" />
 
             </LinearLayout>
+
+            <ImageButton
+                android:onClick="goGalleryActivity"
+                android:layout_gravity="right"
+                android:backgroundTint="@color/colorPrimary"
+                android:src="@android:drawable/ic_menu_gallery"
+                android:elevation="0dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@android:color/transparent" />
 
         </LinearLayout>
 
