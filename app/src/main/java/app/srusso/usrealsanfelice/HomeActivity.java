@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.etiennelawlor.imagegallery.library.activities.ImageGalleryActivity;
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
@@ -94,6 +96,10 @@ public class HomeActivity extends ActivityBase  {
 
 
                 layout_ultima_partita.setVisibility(View.VISIBLE);
+
+                YoYo.with(Techniques.FlipInX)
+                        .duration(1000)
+                        .playOn(findViewById(R.id.layout_utima_partita));
 
             }
 
