@@ -11,18 +11,20 @@ import android.widget.TextView;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+
 
 import app.srusso.usrealsanfelice.base.ActivityBase;
 import app.srusso.usrealsanfelice.config.Config;
-import app.srusso.usrealsanfelice.to.Giocatore;
+
+import app.srusso.usrealsanfelice.notifacation.RegistrationIntentService;
 import app.srusso.usrealsanfelice.to.Partita;
 import cz.msebera.android.httpclient.Header;
 
@@ -48,7 +50,10 @@ public class HomeActivity extends ActivityBase  {
         layout_ultima_partita = (LinearLayout) findViewById(R.id.layout_utima_partita);
         caricaUltimaParita();
 
-
+        if(checkPlayServices()) {
+            Intent intent = new Intent(this, RegistrationIntentService.class);
+            startService(intent);
+        }
     }
 
 
@@ -146,6 +151,24 @@ public class HomeActivity extends ActivityBase  {
         i.putExtra("PARTITA",json_partita);
         startActivity(i);
 
+    }
+
+    private boolean checkPlayServices() {
+
+
+        GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
+        int resultCode = apiAvailability.isGooglePlayServicesAvailable(this);
+        if (resultCode != ConnectionResult.SUCCESS) {
+            if (apiAvailability.isUserResolvableError(resultCode)) {
+                apiAvailability.getErrorDialog(this, resultCode, 1002)
+                        .show();
+            } else {
+
+                finish();
+            }
+            return false;
+        }
+        return true;
     }
 
 }
