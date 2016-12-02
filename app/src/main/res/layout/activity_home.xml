@@ -129,7 +129,18 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
+                android:layout_weight="0.3"
+                android:text="Classifica"
+
+                android:onClick="goDatiActivity"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:backgroundTint="@color/colorAccent" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
                 android:text="@string/title_activity_rosa"
 
                 android:onClick="goRosaActivity"
@@ -143,7 +154,7 @@
                 android:layout_marginLeft="20dp"
                 android:text="@string/title_activity_convocati"
                 android:textColor="@color/colorPrimaryDark"
-                android:layout_weight="0.5"
+                android:layout_weight="0.3"
                 android:onClick="goConvocatiActivity"
                 android:backgroundTint="@color/colorAccent" />
 

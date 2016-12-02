@@ -12,4 +12,5 @@ public class Config {
     public  static  String pathRosa = pathSite +"rest.php?f=1";
     public  static  String pathConvocati = pathSite +"rest.php?f=2";
     public  static  String pathUltimaPartita = pathSite +"rest.php?f=5";
+    public  static  String pathClassifica = pathSite +"rest.php?f=4";
 }

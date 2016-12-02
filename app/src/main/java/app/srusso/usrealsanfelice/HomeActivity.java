@@ -143,6 +143,16 @@ public class HomeActivity extends ActivityBase  {
         startActivity(i);
 
     }
+
+
+
+    public void goDatiActivity(View v){
+
+        Intent i = new Intent(context, DatiActivity.class);
+
+        startActivity(i);
+
+    }
     public void goGalleryActivity(View v){
 
         Intent i = new Intent(context, GalleryActivity.class);
