@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "807614277268",
+    "firebase_url": "https://us-real-san-felice.firebaseio.com",
+    "project_id": "us-real-san-felice",
+    "storage_bucket": "us-real-san-felice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807614277268:android:a9c4b56d3cf44382",
+        "android_client_info": {
+          "package_name": "app.srusso.usrealsanfelice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807614277268-0ocg33ig43fe3vubav4m9l23qvcqcfla.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAw7hhTbxtjReUJCZWj-NG90jp6lCU8TY8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
