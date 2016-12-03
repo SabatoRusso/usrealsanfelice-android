@@ -61,6 +61,7 @@ public class ClassificaAdapter extends BaseAdapter {
 
         ImageView scudettoSquadra = (ImageView) convertView.findViewById(R.id.scudettoSquadra);
         TextView nomeSquadra= (TextView) convertView.findViewById(R.id.nomeSquadra);
+        TextView posizione= (TextView) convertView.findViewById(R.id.posizioneClassifica);
         TextView punti = (TextView) convertView.findViewById(R.id.punti);
         LinearLayout row = (LinearLayout) convertView.findViewById(R.id.row_squadra);
 
@@ -70,6 +71,7 @@ public class ClassificaAdapter extends BaseAdapter {
 
         nomeSquadra.setText(squadra.getNome());
         punti.setText(squadra.getPunti() + "" );
+        posizione.setText(squadra.getPosizione() + "");
 
          if (squadra.getNome().equalsIgnoreCase("real san felice")){
              Picasso.with(mContext).load(R.drawable.scudetto).into(scudettoSquadra);

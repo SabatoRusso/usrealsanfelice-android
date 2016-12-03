@@ -3,9 +3,12 @@ package app.srusso.usrealsanfelice;
 import android.content.Intent;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
@@ -14,6 +17,7 @@ import com.daimajia.androidanimations.library.YoYo;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,17 +29,23 @@ import app.srusso.usrealsanfelice.base.ActivityBase;
 import app.srusso.usrealsanfelice.config.Config;
 
 import app.srusso.usrealsanfelice.notifacation.RegistrationIntentService;
+import app.srusso.usrealsanfelice.to.Notizia;
 import app.srusso.usrealsanfelice.to.Partita;
 import cz.msebera.android.httpclient.Header;
 
 public class HomeActivity extends ActivityBase  {
+
 
     TextView giornata_data;
     TextView squadraFuoriCasa;
     TextView squadraCasa;
     TextView risultato;
     LinearLayout layout_ultima_partita;
+    RelativeLayout layout_news;
+    ImageView copertina;
+    TextView titolocopertina;
     private Partita partita;
+    private Notizia news = new Notizia();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +57,16 @@ public class HomeActivity extends ActivityBase  {
         squadraFuoriCasa = (TextView) findViewById(R.id.squadraFuoriCasa);
         squadraCasa = (TextView) findViewById(R.id.squadraCasa);
         risultato = (TextView) findViewById(R.id.risultato);
+        titolocopertina = (TextView) findViewById(R.id.titolocopertina);
+        copertina = (ImageView) findViewById(R.id.copertina);
         layout_ultima_partita = (LinearLayout) findViewById(R.id.layout_utima_partita);
+        layout_news = (RelativeLayout) findViewById(R.id.contenitore_news);
         caricaUltimaParita();
-
-        if(checkPlayServices()) {
+        caricaUltimaNotizia();
+        /*if(checkPlayServices()) {
             Intent intent = new Intent(this, RegistrationIntentService.class);
             startService(intent);
-        }
+        }*/
     }
 
 
@@ -125,6 +138,69 @@ public class HomeActivity extends ActivityBase  {
     }
 
 
+    public void caricaUltimaNotizia() {
+
+        clientHttpClient.get(Config.pathUltimaNotizia, new JsonHttpResponseHandler() {
+
+            @Override
+            public void onStart() {
+
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray risp) {
+                // called when response HTTP status is "200 OK"
+
+                try {
+
+
+                    JSONObject newsJson =  risp.getJSONObject(0);
+                    news.setTitolo(newsJson.getString("titolo"));
+                    news.setTesto(newsJson.getString("testo"));
+                    news.setData(newsJson.getString("data"));
+                    news.setUrlImmagine(newsJson.getString("img"));
+
+
+
+                    Picasso.with(context).load(news.getUrlImmagine()).into(copertina);
+                    titolocopertina.setText(Html.fromHtml(news.getTitolo()));
+
+                    layout_news.setVisibility(View.VISIBLE);
+                    YoYo.with(Techniques.ZoomIn)
+                            .duration(1000)
+                            .playOn(findViewById(R.id.contenitore_news));
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+
+
+               /* YoYo.with(Techniques.FlipInX)
+                        .duration(1000)
+                        .playOn(findViewById(R.id.layout_utima_partita));*/
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+
+                //  progressDialog.hide();
+                //  showToast(getResources().getString(R.string.erroreConnessione));
+            }
+
+            @Override
+            public void onRetry(int retryNo) {
+                // called when request is retried
+                //   progressDialog.hide();
+                //   showToast(getResources().getString(R.string.erroreConnessione));
+            }
+        });
+    }
+
+
+
 
 
     public void goRosaActivity(View v){
@@ -144,6 +220,17 @@ public class HomeActivity extends ActivityBase  {
 
     }
 
+
+    public void goNewsActivity(View v){
+
+        Intent i = new Intent(context, NewsDettaglioActivity.class);
+        String json_news  = gson.toJson(news);
+
+        i.putExtra("NEWS",json_news);
+
+        startActivity(i);
+
+    }
 
 
     public void goDatiActivity(View v){

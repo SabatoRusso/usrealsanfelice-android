@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import app.srusso.usrealsanfelice.base.ActivityBase;
 import app.srusso.usrealsanfelice.fragments.ClassificaFragment;
+import app.srusso.usrealsanfelice.fragments.ProssimoTurnoFragment;
 
 public class DatiActivity extends ActivityBase {
 
@@ -62,27 +63,6 @@ public class DatiActivity extends ActivityBase {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_dati, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     /**
      * A placeholder fragment containing a simple view.
@@ -133,7 +113,17 @@ public class DatiActivity extends ActivityBase {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return new ClassificaFragment();
+            switch (position){
+
+                case 0:
+                    return new ClassificaFragment();
+                case 1:
+                    return new ProssimoTurnoFragment();
+                default:
+                    return new ClassificaFragment();
+            }
+
+
         }
 
         @Override
