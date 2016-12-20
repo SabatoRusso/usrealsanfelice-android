@@ -134,7 +134,7 @@ public class ClassificaFragment extends Fragment {
 
                         int punti  =calcolaPunti( squadraJson.getInt("vinte"), squadraJson.getInt("pareggiate"));
 
-
+                        punti = squadraJson.getInt("punti");
 
                         Squadra squadra = new Squadra();
                         squadra.setNome(nomeSquadra);
