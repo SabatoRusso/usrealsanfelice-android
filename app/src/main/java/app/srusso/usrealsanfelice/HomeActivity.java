@@ -63,10 +63,10 @@ public class HomeActivity extends ActivityBase  {
         layout_news = (RelativeLayout) findViewById(R.id.contenitore_news);
         caricaUltimaParita();
         caricaUltimaNotizia();
-        /*if(checkPlayServices()) {
-            Intent intent = new Intent(this, RegistrationIntentService.class);
-            startService(intent);
-        }*/
+        //if(checkPlayServices()) {
+         //   Intent intent = new Intent(this, RegistrationIntentService.class);
+          //  startService(intent);
+        //}
     }
 
 
@@ -125,7 +125,7 @@ public class HomeActivity extends ActivityBase  {
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
 
                 //  progressDialog.hide();
-                //  showToast(getResources().getString(R.string.erroreConnessione));
+                  showToast(getResources().getString(R.string.erroreConnessione));
             }
 
             @Override
@@ -187,7 +187,7 @@ public class HomeActivity extends ActivityBase  {
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
 
                 //  progressDialog.hide();
-                //  showToast(getResources().getString(R.string.erroreConnessione));
+                  showToast(getResources().getString(R.string.erroreConnessione));
             }
 
             @Override

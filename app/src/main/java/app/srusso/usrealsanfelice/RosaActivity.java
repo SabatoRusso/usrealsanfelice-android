@@ -161,7 +161,7 @@ public class RosaActivity extends ActivityBase{
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
 
               //  progressDialog.hide();
-              //  showToast(getResources().getString(R.string.erroreConnessione));
+                showToast(getResources().getString(R.string.erroreConnessione));
             }
 
             @Override
