@@ -12,7 +12,8 @@ public class Config {
     public  static  String pathRosa = pathSite +"rest.php?f=1";
     public  static  String pathConvocati = pathSite +"rest.php?f=2";
     public  static  String pathUltimaPartita = pathSite +"rest.php?f=5";
-    public  static  String pathClassifica = pathSite +"rest.php?f=4";
+    //public  static  String pathClassifica = pathSite +"rest.php?f=4";
+    public  static  String pathClassifica = "http://www.prenotacalcetto.com/usreal/classifica.php";
     public  static  String pathProssimoTurno = pathSite +"rest.php?f=3";
     public  static  String pathUltimaNotizia = pathSite +"rest.php?f=6";
 }

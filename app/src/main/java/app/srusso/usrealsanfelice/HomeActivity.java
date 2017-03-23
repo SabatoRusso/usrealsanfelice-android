@@ -14,8 +14,8 @@ import android.widget.TextView;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GoogleApiAvailability;
+
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.squareup.picasso.Picasso;
 
@@ -67,6 +67,8 @@ public class HomeActivity extends ActivityBase  {
          //   Intent intent = new Intent(this, RegistrationIntentService.class);
           //  startService(intent);
         //}
+        FirebaseMessaging.getInstance().subscribeToTopic("settore_prima_squadra_news");
+
     }
 
 
@@ -250,22 +252,6 @@ public class HomeActivity extends ActivityBase  {
 
     }
 
-    private boolean checkPlayServices() {
 
-
-        GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
-        int resultCode = apiAvailability.isGooglePlayServicesAvailable(this);
-        if (resultCode != ConnectionResult.SUCCESS) {
-            if (apiAvailability.isUserResolvableError(resultCode)) {
-                apiAvailability.getErrorDialog(this, resultCode, 1002)
-                        .show();
-            } else {
-
-                finish();
-            }
-            return false;
-        }
-        return true;
-    }
 
 }

@@ -109,37 +109,29 @@ public class ClassificaFragment extends Fragment {
             }
 
             @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject risp) {
+            public void onSuccess(int statusCode, Header[] headers, JSONArray risp) {
                 // called when response HTTP status is "200 OK"
 
-                JSONArray response = null;
-               try {
-                    response = risp.getJSONArray("classifica");
 
 
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
 
-
-
-                for (int i = 0; i < response.length(); i++) {
+                for (int i = 0; i < risp.length(); i++) {
                     try {
-                        JSONObject squadraJson = response.getJSONObject(i);
+                        JSONObject squadraJson = risp.getJSONObject(i);
 
 
                         String nomeSquadra = squadraJson.getString("squadra");
 
 
-                        int punti  =calcolaPunti( squadraJson.getInt("vinte"), squadraJson.getInt("pareggiate"));
+                       // int punti  =calcolaPunti( squadraJson.getInt("vinte"), squadraJson.getInt("pareggiate"));
 
-                        punti = squadraJson.getInt("punti");
+                       int punti = squadraJson.getInt("punti");
 
                         Squadra squadra = new Squadra();
                         squadra.setNome(nomeSquadra);
                         squadra.setPunti(punti);
-                        squadra.setPosizione(squadraJson.getInt("posizione"));
+                        squadra.setPosizione(i+1);
 
                         Log.i("nome",nomeSquadra);
 
